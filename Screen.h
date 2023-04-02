@@ -1,26 +1,30 @@
-#ifndef _Screen_h_
-#define _Screen_h_
+#ifndef _Screen_h___
+#define _Screen_h___
 
 #include "Data.h"
+
+#ifndef MAX
+#define MAX 5
+#endif
+#ifndef Menu_List
+#define Menu_List 4
+#endif
+#ifndef Count
+#define Count 110
+#endif
+#ifndef ratio
+#define ratio 1.05
+#endif
+#ifndef var
+#define var 22
+#endif
 
 void gotoxy(int x, int y);
 void textcolor(int color_number);
 
-int BootScreen(void);
-int StartScreen(void);
-void ContributeScreen(void);
-void SettingScreen(void);
-int RegionSelectScreen(DATA*);
-int FoodTypeSelectScreen(DATA*);
+int StartScreen(Status*);
+int RegionSelectScreen(Status*);
+int FoodTypeSelectScreen(Status*);
 int Select(int[][2], int, int);
-int SelectSetting(int[][2], int, int, char* [][6], int [][3][2], int*);
-void SelectShowValue(int num, int page, char* SettingList[][6], int pos[][3][2]);
-void PrintTitle(char* game, char* title, int height);
-void End(void);
-void ClearScreen(void);
-void DontEat(void);
-void AllocFail(void);
-
-void NumToFood(int number, char* result, char* Title);
 
 #endif
